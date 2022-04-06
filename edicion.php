@@ -1,6 +1,5 @@
 <?php include_once 'config/db.php'; 
 $id=$_GET['t'];
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +11,7 @@ $id=$_GET['t'];
 <body>
 	<h1>formulario con postgresql</h1>
 	<?php 
-		$query = "SELECT * FROM usuarios";
+		$query = "SELECT * FROM usuarios WHERE id = '$id'";
 		$execute=pg_query($conn, $query);
 		$row=pg_fetch_array($execute);
 		$id = $row[0];
